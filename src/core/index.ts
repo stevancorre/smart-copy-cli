@@ -1,16 +1,18 @@
 import { Configuration } from "../types";
-import { writeErrorThenExit } from "../utils/console";
+import { writeErrorAndNoteThenExit } from "../utils/console";
 import { performTransaction } from "./transaction";
 
 export const execute = (config: Configuration): void => {
     if (!config.transactions)
-        return writeErrorThenExit("No transaction defined in configuration");
+        return writeErrorAndNoteThenExit(
+            "No transaction defined in configuration",
+            "Read more about it here: MISSING LINK");
 
     if (config.transactions instanceof Array) {
         for (const transaction of config.transactions) {
-            performTransaction(config, transaction)
+            performTransaction(config.vars, transaction)
         }
     } else {
-        performTransaction(config, config.transactions);
+        performTransaction(config.vars, config.transactions);
     }
 }

@@ -1,0 +1,17 @@
+{
+  "name": "smart-copy-cli",
+  "version": "0.0.0",
+  "description": "A smart copy CLI",
+  "repository": {
+    "type": "git",
+    "url": "https://stevancorre.com/smart-copy-cli"
+  },
+  "keywords": [
+    "npm",
+    "smart",
+    "copy",
+    "cli"
+  ],
+  "author": "Stévan Corre <me@stevancorre.com>",
+  "license": "MIT"
+}

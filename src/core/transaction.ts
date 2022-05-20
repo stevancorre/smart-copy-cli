@@ -4,6 +4,8 @@ import path from "path";
 
 import { writeErrorAndNoteThenExit, writeErrorThenExit, writeSuccess, writeWarning } from "../utils/console";
 import { VarDictionary, Transaction } from "../types";
+import { getFileNameWithoutExtension } from "../utils/filePath";
+import { Stats, statSync } from "fs";
 
 export const performTransaction = (vars: VarDictionary | undefined, transaction: Transaction | string): void => {
     const parsedTransaction: Transaction = parse(transaction);
@@ -16,6 +18,9 @@ export const performTransaction = (vars: VarDictionary | undefined, transaction:
             if (files.length === 0) return writeWarning(`Skipped: pattern \`${pattern}\` found nothing`);
 
             for (const file of files) {
+                const stats: Stats = statSync(file);
+                if (!stats.isFile()) continue;
+
                 const outPath: string = getOutPath(parsedTransaction.out, file);
                 await copy(file, outPath);
 
@@ -32,7 +37,7 @@ const getOutPath = (outBasePath: string, file: string): string => {
             "Read more about it here: MISSING LINK");
 
         // replace dirs then extension
-        const fileName: string = file.replace(/^.*(\\|\/|\:)/, "").replace(/\.[^.]*$/g, "");
+        const fileName: string = getFileNameWithoutExtension(file);
         return outBasePath.replace(/{{( +)?file( +)?}}/g, fileName);
     }
 

@@ -9,13 +9,13 @@ const DEFAULT_CONFIG: Configuration = <const>{
     },
 };
 
-export const loadConfigFile = (filePath: string = DEFAULT_CONFIG_FILE_NAME): Configuration | undefined => {
+export const loadConfigFile = (filePath: string = DEFAULT_CONFIG_FILE_NAME): Configuration => {
     if (!existsSync(filePath)) {
         writeError(`Config file not found: \`${filePath}\``);
         if (filePath != DEFAULT_CONFIG_FILE_NAME)
             writeNote(`You can use the default config path to avoid passing it as a parameter: \`${DEFAULT_CONFIG_FILE_NAME}\``);
 
-        return;
+        return process.exit(1);
     }
 
     const rawConfig: string = readFileSync(filePath).toString();

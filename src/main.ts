@@ -2,8 +2,7 @@
 
 import { loadConfigFile } from "./config";
 import { Configuration } from "./types";
+import { execute } from "./core";
 
-const config: Configuration | undefined = loadConfigFile("tests/simple/smart-copy.json");
-if (config === undefined) process.exit(0);
-
-console.log(config);
+const config: Configuration = loadConfigFile("tests/simple/smart-copy.json");
+execute(config);

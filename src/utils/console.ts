@@ -10,5 +10,18 @@ export const writeError = (message: string): void => write("error", RED, message
 export const writeNote = (message: string): void => write("note", CYAN, message);
 export const writeSuccess = (message: string): void => write("success", GREEN, message);
 
+export const writeErrorAndNoteThenExit = (error: string, note: string): never => {
+    writeError(error);
+    writeNote(note);
+    
+    return process.exit(1);
+};
+
+export const writeErrorThenExit = (error: string): never => {
+    writeError(error);
+        
+    return process.exit(1);
+};
+
 const write = (label: string, color: string, message: string): void =>
     console.log(`${color}${label}:${RESET} ${message}`);

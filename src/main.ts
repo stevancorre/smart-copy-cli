@@ -5,6 +5,10 @@ import { Configuration } from "./types";
 import { execute } from "./core";
 import { configureWriting } from "./utils/console";
 
-const config: Configuration = loadConfigFile("tests/simple/smart-copy.json");
+// load configuration
+const configFile: string | undefined = process.argv[2];
+const config: Configuration = loadConfigFile(configFile);
 configureWriting(config);
+
+// and run program
 execute(config);

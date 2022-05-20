@@ -2,6 +2,13 @@
   "name": "smart-copy-cli",
   "version": "0.0.0",
   "description": "A smart copy CLI",
+  "main": "bin/main.js",
+  "bin": "bin/main.js",
+  "scripts": {
+    "start:dev": "nodemon",
+    "build": "tsc",
+    "start": "npm run build && node bin/main.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://stevancorre.com/smart-copy-cli"
@@ -12,6 +19,14 @@
     "copy",
     "cli"
   ],
-  "author": "Stévan Corre <me@stevancorre.com>",
-  "license": "MIT"
+  "author": {
+    "email": "me@stevancorre.com",
+    "name": "Stévan Corre"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.35",
+    "nodemon": "^2.0.16",
+    "typescript": "^4.6.4"
+  }
 }

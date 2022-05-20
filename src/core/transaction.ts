@@ -1,4 +1,8 @@
-import { writeErrorAndNoteThenExit, writeErrorThenExit, writeSuccess } from "../utils/console";
+import { copy } from "fs-extra";
+import { glob } from "glob";
+import path from "path";
+
+import { writeErrorAndNoteThenExit, writeErrorThenExit, writeSuccess, writeWarning } from "../utils/console";
 import { Configuration, Transaction, VarDictionary } from "../types";
 
 export const performTransaction = (config: Configuration, transaction: Transaction | string): void => {
@@ -6,10 +10,19 @@ export const performTransaction = (config: Configuration, transaction: Transacti
     parsedTransaction.in = applyVar(config.vars, parsedTransaction.in);
     parsedTransaction.out = applyVar(config.vars, parsedTransaction.out);
 
-    // TODO: implement
-    throw "not implemented";
+    const patterns: string[] = parsedTransaction.in.split(",");
+    for (const pattern of patterns) {
+        glob(pattern, async (error: Error | null, files: string[]) => {
+            if (error) return writeErrorAndNoteThenExit(error.message, `At \`\``);
+            if (files.length === 0) return writeWarning(`Skipped: pattern \`${pattern}\` found nothing`);
 
-    writeSuccess(`Transaction performed: ${parsedTransaction.in} -> ${parsedTransaction.out}`);
+            for (const file of files) {
+                await copy(file, path.join(parsedTransaction.out, file));
+
+                writeSuccess(`Transaction done: ${file} -> ${parsedTransaction.out}`);
+            }
+        });
+    }
 };
 
 const parse = (transaction: Transaction | string): Transaction => {
@@ -30,6 +43,8 @@ const parse = (transaction: Transaction | string): Transaction => {
 };
 
 const applyVar = (vars: VarDictionary | undefined, on: string): string => {
+    on = on.trim();
+
     const regex: RegExp = /{{(.+?(?=}}))/g;
     const match: RegExpExecArray | null = regex.exec(on);
     if (match === null || match.length !== 2) return on;

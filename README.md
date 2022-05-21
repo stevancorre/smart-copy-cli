@@ -53,15 +53,22 @@ $ npm install -g smart-copy-cli
 
 ## 🏃 Quick start
 
-```console
+```
 $ smart-copy help
-smart-copy [command]
+Usage: smart-copy-cli [options] [command] [config file]
 
-Usage:
+A smart copy CLI
 
-smart-copy        perform all transactions in config file smart-copy.json
-smart-copy [json] perform all transactions in provided config file
-smart-copy help   show this help message
+Arguments:
+  config file     the configuration file (default: "smart-copy.json")
+
+Options:
+  -V, --version   output the version number
+  -h, --help      display help for command
+
+Commands:
+  init [options]  creates a simple config file in the current directory
+  help [command]  display help for command
 ```
 
 <br>

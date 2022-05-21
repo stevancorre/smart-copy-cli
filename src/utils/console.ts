@@ -9,7 +9,7 @@ const CYAN: string = <const>"\x1b[36m";
 
 let silent: boolean;
 
-export const configureWriting = (config: Configuration) => silent = config.options.silent;
+export const configureWriting = (isSilent: boolean) => silent = isSilent;
 
 export const writeWarning = (message: string): void => write("warning", YELLOW, message, false);
 export const writeError = (message: string): void => write("error", RED, message, true);

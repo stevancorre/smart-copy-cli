@@ -2,8 +2,8 @@ import { existsSync, readFileSync } from "fs";
 import { writeError, writeNote } from "./utils/console";
 import { Configuration } from "./core";
 
-const DEFAULT_CONFIG_FILE_NAME: string = <const>"smart-copy.json";
-const DEFAULT_CONFIG: Configuration = <const>{
+export const DEFAULT_CONFIG_FILE_NAME: string = <const>"smart-copy.json";
+export const DEFAULT_CONFIG: Configuration = <const>{
     options: {
         silent: false
     },

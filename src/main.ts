@@ -1,5 +1,16 @@
 #!/usr/bin/env node
 
-import { readArgs } from "./commands";
+import { Command } from "commander";
+import { name, description, version } from "../package.json";
+import { bindCommands } from "./commands";
 
-readArgs(process.argv);
+const program: Command = new Command();
+
+program
+    .name(name)
+    .description(description)
+    .version(version);
+
+bindCommands(program);
+
+program.parse();

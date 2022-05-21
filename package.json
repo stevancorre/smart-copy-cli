@@ -2,9 +2,9 @@
   "name": "smart-copy-cli",
   "version": "0.0.0",
   "description": "A smart copy CLI",
-  "main": "bin/main.js",
+  "main": "bin/src/main.js",
   "bin": {
-    "smart-copy": "bin/main.js"
+    "smart-copy": "bin/src/main.js"
   },
   "scripts": {
     "start:dev": "nodemon",
@@ -34,6 +34,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "commander": "^9.2.0",
     "fs-extra": "^10.1.0",
     "glob": "^8.0.3"
   }

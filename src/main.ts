@@ -21,6 +21,7 @@ program
 
         execute(configuration);
     })
-    .addCommand(initCommand);
+    .addCommand(initCommand)
+    .addHelpCommand();
 
 program.parse();

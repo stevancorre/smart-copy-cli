@@ -1,4 +1,4 @@
-import { VarDictionary, ConfigurationOptions, Transaction } from ".";
+import { Transaction, ConfigurationOptions, VarDictionary } from "..";
 
 export type Configuration = {
     vars?: VarDictionary,

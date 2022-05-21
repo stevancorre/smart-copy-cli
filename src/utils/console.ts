@@ -1,4 +1,4 @@
-import { Configuration } from "../types";
+import { Configuration } from "../core";
 
 const RESET: string = <const>"\x1b[0m";
 

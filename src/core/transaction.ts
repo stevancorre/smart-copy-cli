@@ -1,11 +1,11 @@
+import { Stats, statSync } from "fs";
 import { copy } from "fs-extra";
 import { glob } from "glob";
 import path from "path";
 
+import { Transaction, VarDictionary } from ".";
 import { writeErrorAndNoteThenExit, writeErrorThenExit, writeSuccess, writeWarning } from "../utils/console";
-import { VarDictionary, Transaction } from "../types";
 import { getFileNameWithoutExtension } from "../utils/filePath";
-import { Stats, statSync } from "fs";
 
 export const performTransaction = (vars: VarDictionary | undefined, transaction: Transaction | string): void => {
     const parsedTransaction: Transaction = parse(transaction);

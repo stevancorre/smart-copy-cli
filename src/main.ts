@@ -3,6 +3,7 @@
 import { Command } from "commander";
 
 import { name, description, version } from "../package.json";
+import { initCommand } from "./commands/init";
 import { DEFAULT_CONFIG_FILE_NAME, loadConfigFile } from "./config";
 import { Configuration, execute } from "./core";
 import { configureWriting } from "./utils/console";
@@ -20,6 +21,6 @@ program
 
         execute(configuration);
     })
-    .addCommand(program);
+    .addCommand(initCommand);
 
 program.parse();

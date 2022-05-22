@@ -34,7 +34,7 @@ const getOutPath = (outBasePath: string, file: string): string => {
     if (/{{( +)?file( +)?}}/g.test(outBasePath)) {
         if (!/{{( +)?file( +)?}}(\.[^.]*$)?$/g.test(outBasePath)) return writeErrorAndNoteThenExit(
             "Variable `file` must be at the end of the path",
-            "Read more about it here: MISSING LINK");
+            "Read more about it here: https://t.ly/enQl");
 
         // replace dirs then extension
         const fileName: string = getFileNameWithoutExtension(file);
@@ -66,7 +66,7 @@ const applyVars = (vars: VarDictionary | undefined, on: Transaction): void => {
 
     if (/{{( +)?file( +)?}}/g.test(on.in)) return writeErrorAndNoteThenExit(
         "Reserved variable name: `file`",
-        "Read more about it here: MISSING LINK")
+        "Read more about it here: https://t.ly/enQl")
 }
 
 const applyVar = (vars: VarDictionary | undefined, on: string): string => {

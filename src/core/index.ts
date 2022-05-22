@@ -12,7 +12,7 @@ export const execute = (config: Configuration): void => {
     if (!config.transactions)
         return writeErrorAndNoteThenExit(
             "No transaction defined in configuration",
-            "Read more about it here: MISSING LINK");
+            "Read more about it here: https://t.ly/A5r_");
 
     if (config.transactions instanceof Array) {
         for (const transaction of config.transactions) {

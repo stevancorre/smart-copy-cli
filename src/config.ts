@@ -14,7 +14,7 @@ export const loadConfigFile = (filePath: string = DEFAULT_CONFIG_FILE_NAME): Con
         writeError(`Config file not found: \`${filePath}\``);
         if (filePath != DEFAULT_CONFIG_FILE_NAME)
             writeNote(`You can use the default config path to avoid passing it as a parameter`);
-        writeNote("Read more about it here: MISSING LINK");
+        writeNote("Read more about it here: https://t.ly/YnMo");
 
         return process.exit(1);
     }

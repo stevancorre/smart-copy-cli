@@ -17,7 +17,7 @@
     <a href="https://www.typescriptlang.org">
         <img src="https://img.shields.io/badge/TypeScript-007acc?style=for-the-badge&logo=typescript&logoColor=white">
     </a>
-    <a href="https://www.typescriptlang.org">
+    <a href="https://www.npmjs.com/package/smart-copy-cli">
         <img src="https://img.shields.io/badge/NPM-ff0000?style=for-the-badge&logo=npm&logoColor=white">
     </a>
     <a href="https://paypal.me/aiixu">

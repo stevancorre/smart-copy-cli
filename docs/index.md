@@ -1,18 +1,18 @@
 # A tool to help you copying files around in your project
 
-## 📚 Table of content
-- [Installation](#📥-installation)
-- [Configuration](#⚙️-configuration)
-- [Commands](#🛠️-commands)
-- [License](#📝-license)
+## Table of content
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Commands](#commands)
+- [License](#license)
 
-## 📥 Installation
+## Installation
 
 ```sh
 $ npm install -g smart-copy-cli
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 The configuration file contains three parts: the options, the variables and the transactions. See:
 
@@ -94,7 +94,7 @@ To change the extensions:
 ```
 **Note that you can only use the `file` variable at the end of the output expression**
 
-## 🛠️ Commands
+## Commands
 
 #### Usage
 
@@ -142,7 +142,7 @@ $ smart-copy init [options]
 | silent |  [boolean](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean) |  false   |  Block application from writing to [stdout](https://nodejs.org/api/process.html#processstdout) |
 | force  |  [boolean](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#the-primitives-string-number-and-boolean) |  false   |  Overrides any existing configuration file                                                     |
 
-### 🙋 Help
+### Help
 
 Display help for the CLI or a specific command
 
@@ -152,6 +152,6 @@ Display help for the CLI or a specific command
 $ smart-copy help [command]
 ```
 
-## 📝 License
+## License
 
 This project is <a href="https://opensource.org/licenses/MIT">MIT</a> licensed.

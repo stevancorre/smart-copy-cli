@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "A smart copy CLI",
   "main": "bin/main.js",
+  "binName": "smart-copy",
   "bin": {
     "smart-copy": "bin/main.js"
   },

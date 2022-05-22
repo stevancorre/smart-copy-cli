@@ -55,7 +55,7 @@ $ npm install -g smart-copy-cli
 
 ```
 $ smart-copy help
-Usage: smart-copy-cli [options] [command] [config file]
+Usage: smart-copy [options] [command] [config file]
 
 A smart copy CLI
 

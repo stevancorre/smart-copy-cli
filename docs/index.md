@@ -45,7 +45,9 @@ You can use variables inside a variable definition too (order doesn't matters):
     "outDir": "{{ srcDir }}/dist"
 }
 ```
+
 Some variables are reserved, here is a complete list:
+
 | Name |                         Description                         |
 |------|-------------------------------------------------------------|
 | file |  Represents the file name in a [transaction](#transactions) |

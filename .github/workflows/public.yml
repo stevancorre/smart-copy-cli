@@ -1,7 +1,7 @@
 name: Publish Package to npmjs
 on:
-  push:
-    branches: [release]
+  release:
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest

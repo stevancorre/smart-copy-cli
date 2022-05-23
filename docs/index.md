@@ -42,7 +42,7 @@ You can use variables inside a variable definition too (order doesn't matters):
 ```json
 "variables": {
     "srcDir": "src",
-    "outDir": "{{ "{% srcDir " }}%}/dist"
+    "outDir": "{{ "{{ srcDir " }}}}/dist"
 }
 ```
 
@@ -87,12 +87,12 @@ The output path is either a folder or a pattern made to change the file extensio
 
 You can use variables here
 ```json
-"[filter] -> {{ "{% outDir " }}%}"
+"[filter] -> {{ "{{ outDir " }}}}"
 ```
 
 To change the extensions:
 ```json
-"[filter] ->{{ "{% outDir " }}%}/{{ "{% file " }}%}.ext"
+"[filter] ->{{ "{{ outDir " }}}}/{{ "{{ file " }}}}.ext"
 ```
 **Note that you can only use the `file` variable at the end of the output expression**
 

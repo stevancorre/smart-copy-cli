@@ -1,6 +1,6 @@
 <h1 align="center">
     <br>
-    <a href="http://www.amitmerchant.com/electron-markdownify">
+    <a href="https://stevancorre.github.io/smart-copy-cli/">
         <img src="https://i.imgur.com/XDXPiDw.png" alt="Smart copy CLI icon" width="200">
     </a>
     <br>

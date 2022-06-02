@@ -30,8 +30,9 @@
     <a href="#demo">Demo</a> •
     <a href="#quick-start">Quick start</a> •
     <a href="https://stevancorre.github.io/smart-copy-cli">Docs</a> •
-    <a href="#credits">Credits</a> •
-    <a href="#license">License</a>
+    <a href="https://github.com/stevancorre/smart-copy-cli/tree/main/examples">Examples</a> •
+    <a href="#license">License</a> •
+    <a href="#credits">Credits</a>
 </p>
 
 <br>

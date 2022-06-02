@@ -1,0 +1,16 @@
+{
+    "name": "smart-copy-cli-static-website-example",
+    "scripts": {
+        "build": "node-sass scss -o dist/css && smart-copy"
+    },
+    "author": {
+        "email": "me@stevancorre.com",
+        "name": "Stévan Corre",
+        "url": "https://stevancorre.com"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "node-sass": "^7.0.1",
+        "smart-copy-cli": "^1.0.2"
+    }
+}

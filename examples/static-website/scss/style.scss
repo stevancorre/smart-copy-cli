@@ -1,0 +1,17 @@
+@import "theme.scss";
+
+body {
+    font-family: "sans-serif";
+
+    color: $text;
+    background-color: $background;
+}
+
+.container {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

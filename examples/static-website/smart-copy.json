@@ -1,0 +1,11 @@
+{
+    "options": {
+        "silent": false
+    },
+    "vars": {
+        "outDir": "dist"
+    },
+    "transactions": [
+        "index.html,public/* -> {{outDir}}"
+    ]
+}

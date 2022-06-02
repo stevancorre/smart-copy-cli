@@ -61,23 +61,22 @@ const parse = (transaction: Transaction | string): Transaction => {
 };
 
 const applyVars = (vars: VarDictionary | undefined, on: Transaction): void => {
-    on.in = applyVar(vars, on.in);
-    on.out = applyVar(vars, on.out);
-
     if (/{{( +)?file( +)?}}/g.test(on.in)) return writeErrorAndNoteThenExit(
         "Reserved variable name: `file`",
         "Read more about it here: https://t.ly/enQl")
+
+    on.in = applyVar(vars, on.in);
+    on.out = applyVar(vars, on.out);
 }
 
 const applyVar = (vars: VarDictionary | undefined, on: string): string => {
-    on = on.trim();
+    on = on.trim().replace(/{{( +)?(.*[^ ])( +)?}}/g, "{{$2}}");
 
-    const regex: RegExp = /{{([^file].+?(?=}}))/g;
+    const regex: RegExp = /{{(.*[^ ])}}/g;
     const match: RegExpExecArray | null = regex.exec(on);
     if (match === null || match.length !== 2) return on;
 
     const key: string = match[1].trim();
-
     const formattedVar: string = `{{${key}}}`;
 
     const value: string | undefined = vars?.[key];

@@ -26,16 +26,17 @@
 </p>
 
 <p align="center">
-    <a href="#📥-download">Download</a> •
-    <a href="#🖼️-demo">Demo</a> •
-    <a href="#🏃-usage">Usage</a> •
-    <a href="#👑-credits">Credits</a> •
-    <a href="#📝-license">License</a>
+    <a href="#download">Download</a> •
+    <a href="#demo">Demo</a> •
+    <a href="#quick-start">Quick start</a> •
+    <a href="https://stevancorre.github.io/smart-copy-cli">Docs</a> •
+    <a href="#credits">Credits</a> •
+    <a href="#license">License</a>
 </p>
 
 <br>
 
-## 📥 Download
+## Download
 
 ```sh
 $ npm install -g smart-copy-cli
@@ -43,7 +44,7 @@ $ npm install -g smart-copy-cli
 
 <br>
 
-## 🖼️ Demo
+## Demo
 
 <div align="center">
     <img src="https://i.imgur.com/zXDXs41.gif">
@@ -51,9 +52,9 @@ $ npm install -g smart-copy-cli
 
 <br>
 
-## 🏃 Quick start
+## Quick start
 
-```
+```console
 $ smart-copy help
 Usage: smart-copy [options] [command] [config file]
 
@@ -73,13 +74,13 @@ Commands:
 
 <br>
 
-## 📝 License
+## License
 
 This project is <a href="https://opensource.org/licenses/MIT">MIT</a> licensed.
 
 <br>
 
-## 👑 Credits
+## Credits
 
 - Icon: <a href="https://www.flaticon.com/free-icons/document" title="document icons">Document icons created by Freepik - Flaticon</a>
 - README design: <a href="https://github.com/amitmerchant1990/electron-markdownify/blob/master/README.md">github.com/amitmerchant1990</a>
